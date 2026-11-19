@@ -1,0 +1,62 @@
+{
+  "seed": 42,
+  "sources": {
+    "cuad.json": "https://huggingface.co/datasets/theatticusproject/cuad/resolve/a3c393f5d103fd0c516374e4fdff676c8176dcb1/CUAD_v1/CUAD_v1.json",
+    "ledgar-train.parquet": "https://huggingface.co/datasets/coastalcph/lex_glue/resolve/c23fdff1a6bf74e0e1a71cb86f1e781d37da888c/ledgar/train-00000-of-00001.parquet",
+    "ledgar-validation.parquet": "https://huggingface.co/datasets/coastalcph/lex_glue/resolve/c23fdff1a6bf74e0e1a71cb86f1e781d37da888c/ledgar/validation-00000-of-00001.parquet",
+    "ledgar-test.parquet": "https://huggingface.co/datasets/coastalcph/lex_glue/resolve/c23fdff1a6bf74e0e1a71cb86f1e781d37da888c/ledgar/test-00000-of-00001.parquet"
+  },
+  "source_revision_policy": "pinned URLs",
+  "corpus": {
+    "train": {
+      "rows": 83730,
+      "sha256": "268702719eeabee50658cacc87b2466d548c2434072664c1d62c7aa638289108",
+      "labels": {}
+    },
+    "validation": {
+      "rows": 7303,
+      "sha256": "7148541a90b0e9993ccaa7564016e862dba5cfef8476e301dae9d61fae42892e",
+      "labels": {}
+    },
+    "test": {
+      "rows": 11632,
+      "sha256": "db263e8e9a87feef9ab268853c0989cbb99ebd30ef4cd9ff2e06e8124c47f571",
+      "labels": {}
+    }
+  },
+  "clauses": {
+    "train": {
+      "rows": 7226,
+      "sha256": "28a9b58911c2f95e68aa542560e88077ada3f49e828bd3bbcdc9e11058522708",
+      "labels": {
+        "Indemnification": 1154,
+        "Governing Law": 3363,
+        "Confidentiality": 964,
+        "Termination": 1214,
+        "Limitation of Liability": 531
+      }
+    },
+    "validation": {
+      "rows": 1075,
+      "sha256": "677645ef17ef766c03db9b86428d923897452f47cf969b8baa73ae45d7216e8f",
+      "labels": {
+        "Governing Law": 499,
+        "Indemnification": 178,
+        "Termination": 195,
+        "Confidentiality": 143,
+        "Limitation of Liability": 60
+      }
+    },
+    "test": {
+      "rows": 1103,
+      "sha256": "faaf5be1388359c953a6f721de1c152d36632b44cff5db6f6f57b8bfba616e56",
+      "labels": {
+        "Governing Law": 577,
+        "Indemnification": 169,
+        "Confidentiality": 152,
+        "Termination": 129,
+        "Limitation of Liability": 76
+      }
+    }
+  }
+}

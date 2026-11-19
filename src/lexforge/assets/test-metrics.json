@@ -1,0 +1,86 @@
+{
+  "split": "test",
+  "dataset_sha256": "faaf5be1388359c953a6f721de1c152d36632b44cff5db6f6f57b8bfba616e56",
+  "checkpoint_sha256": "3ea94b471cc37262c00ca54cf43723b33f00f952e8d98c3160c5e990ba128eb3",
+  "examples": 1103,
+  "accuracy": 0.9347234814143246,
+  "macro_f1": 0.9035085678440662,
+  "macro_precision": 0.8847348719187323,
+  "macro_recall": 0.9319994684574022,
+  "labels": [
+    "Confidentiality",
+    "Termination",
+    "Governing Law",
+    "Indemnification",
+    "Limitation of Liability"
+  ],
+  "confusion_matrix": [
+    [
+      143,
+      4,
+      0,
+      0,
+      5
+    ],
+    [
+      1,
+      123,
+      0,
+      1,
+      4
+    ],
+    [
+      5,
+      6,
+      542,
+      10,
+      14
+    ],
+    [
+      0,
+      2,
+      0,
+      153,
+      14
+    ],
+    [
+      0,
+      1,
+      0,
+      5,
+      70
+    ]
+  ],
+  "per_category": {
+    "Confidentiality": {
+      "precision": 0.959731543624161,
+      "recall": 0.9407894736842105,
+      "f1": 0.9501661129568106,
+      "support": 152
+    },
+    "Termination": {
+      "precision": 0.9044117647058824,
+      "recall": 0.9534883720930233,
+      "f1": 0.9283018867924528,
+      "support": 129
+    },
+    "Governing Law": {
+      "precision": 1.0,
+      "recall": 0.9393414211438474,
+      "f1": 0.968722073279714,
+      "support": 577
+    },
+    "Indemnification": {
+      "precision": 0.9053254437869822,
+      "recall": 0.9053254437869822,
+      "f1": 0.9053254437869822,
+      "support": 169
+    },
+    "Limitation of Liability": {
+      "precision": 0.6542056074766355,
+      "recall": 0.9210526315789473,
+      "f1": 0.7650273224043715,
+      "support": 76
+    }
+  }
+}

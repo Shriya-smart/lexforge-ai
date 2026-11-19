@@ -1,0 +1,65 @@
+{
+  "vocabulary": 15824,
+  "strength": 128,
+  "fit_min_count": 3,
+  "validation_strength_search": [
+    {
+      "strength": 2,
+      "trigram_perplexity": 219.16189843211765
+    },
+    {
+      "strength": 4,
+      "trigram_perplexity": 179.5774966202973
+    },
+    {
+      "strength": 8,
+      "trigram_perplexity": 151.0247470177537
+    },
+    {
+      "strength": 16,
+      "trigram_perplexity": 130.88314877381134
+    },
+    {
+      "strength": 32,
+      "trigram_perplexity": 117.25088777124556
+    },
+    {
+      "strength": 64,
+      "trigram_perplexity": 108.82834583706583
+    },
+    {
+      "strength": 128,
+      "trigram_perplexity": 104.81484420933131
+    }
+  ],
+  "model_sha256": "b3e8bfd60df3cd61a5676e3ef2b565cd5a322abb60996ed2feb1e32f71e35057",
+  "prepared_sha256": {
+    "train": "268702719eeabee50658cacc87b2466d548c2434072664c1d62c7aa638289108",
+    "validation": "7148541a90b0e9993ccaa7564016e862dba5cfef8476e301dae9d61fae42892e",
+    "test": "db263e8e9a87feef9ab268853c0989cbb99ebd30ef4cd9ff2e06e8124c47f571"
+  },
+  "validation": {
+    "2": {
+      "perplexity": 146.74735787147736,
+      "tokens_including_eos": 257176,
+      "unknown_tokens": 8588
+    },
+    "3": {
+      "perplexity": 104.81484420933131,
+      "tokens_including_eos": 257176,
+      "unknown_tokens": 8588
+    }
+  },
+  "test": {
+    "2": {
+      "perplexity": 126.68374866402395,
+      "tokens_including_eos": 444727,
+      "unknown_tokens": 13187
+    },
+    "3": {
+      "perplexity": 87.28563133167751,
+      "tokens_including_eos": 444727,
+      "unknown_tokens": 13187
+    }
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "format": 1,
+  "labels": [
+    "Confidentiality",
+    "Termination",
+    "Governing Law",
+    "Indemnification",
+    "Limitation of Liability"
+  ],
+  "base_model": "openai-community/gpt2",
+  "base_revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+  "max_length": 96,
+  "trainable_blocks": 1,
+  "training": {
+    "seed": 42,
+    "epochs": 3,
+    "batch_size": 16,
+    "learning_rate": 0.00015,
+    "device": "cpu",
+    "threads": 3,
+    "bf16_autocast": true,
+    "train_per_label": 240,
+    "validation_per_label": 60,
+    "train_examples": 1200,
+    "validation_examples": 300,
+    "data_sha256": {
+      "train": "28a9b58911c2f95e68aa542560e88077ada3f49e828bd3bbcdc9e11058522708",
+      "validation": "677645ef17ef766c03db9b86428d923897452f47cf969b8baa73ae45d7216e8f"
+    },
+    "torch": "2.7.1+cpu"
+  },
+  "selected_epoch": 3,
+  "validation": {
+    "examples": 300,
+    "accuracy": 0.9366666666666666,
+    "macro_f1": 0.9370911570952491,
+    "macro_precision": 0.938876326044984,
+    "macro_recall": 0.9366666666666665,
+    "labels": [
+      "Confidentiality",
+      "Termination",
+      "Governing Law",
+      "Indemnification",
+      "Limitation of Liability"
+    ],
+    "confusion_matrix": [
+      [
+        58,
+        0,
+        0,
+        0,
+        2
+      ],
+      [
+        1,
+        56,
+        0,
+        2,
+        1
+      ],
+      [
+        0,
+        3,
+        55,
+        1,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        55,
+        4
+      ],
+      [
+        0,
+        0,
+        0,
+        3,
+        57
+      ]
+    ],
+    "per_category": {
+      "Confidentiality": {
+        "precision": 0.9666666666666667,
+        "recall": 0.9666666666666667,
+        "f1": 0.9666666666666667,
+        "support": 60
+      },
+      "Termination": {
+        "precision": 0.9491525423728814,
+        "recall": 0.9333333333333333,
+        "f1": 0.9411764705882353,
+        "support": 60
+      },
+      "Governing Law": {
+        "precision": 1.0,
+        "recall": 0.9166666666666666,
+        "f1": 0.9565217391304348,
+        "support": 60
+      },
+      "Indemnification": {
+        "precision": 0.9016393442622951,
+        "recall": 0.9166666666666666,
+        "f1": 0.9090909090909091,
+        "support": 60
+      },
+      "Limitation of Liability": {
+        "precision": 0.8769230769230769,
+        "recall": 0.95,
+        "f1": 0.912,
+        "support": 60
+      }
+    }
+  }
+}
