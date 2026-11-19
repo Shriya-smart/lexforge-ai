@@ -1,7 +1,6 @@
 # LexForge AI — The Legal Language Lab
-[![Built with askThili](https://ask.thili.ai/api/v1/public/projects/kj4ug9nh9e/badge.svg)](https://ask.thili.ai/b/kj4ug9nh9e)
-[![Built with askThili](https://ask.thili.ai/api/v1/public/projects/kj4ug9nh9e/badge.svg)](https://ask.thili.ai/b/kj4ug9nh9e)
 
+[![Built with askThili](https://ask.thili.ai/api/v1/public/projects/kj4ug9nh9e/badge.svg)](https://ask.thili.ai/b/kj4ug9nh9e)
 LexForge is a Python 3.11 terminal game for law students. Complete contracts in your own words, inspect model-generated suggestions, and compare GPT-2’s clause category with the exercise target. Play drafting, clause guessing, and clause revision challenges across five contract topics.
 
 **For educational use only. LexForge does not provide legal advice.** A model’s confidence measures its preference among its supported categories. It does not measure legal correctness, enforceability, or drafting quality.
