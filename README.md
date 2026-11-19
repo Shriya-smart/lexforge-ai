@@ -1,52 +1,52 @@
-# LexForge AI — The Legal Language Lab
+# Legal Sentence Game
 
-LexForge is a Python 3.11 terminal game for law students. Complete contracts in your own words, inspect model-generated suggestions, and compare GPT-2’s clause category with the exercise target. Play drafting, clause guessing, and clause revision challenges across five contract topics.
+[![Built with askThili](https://ask.thili.ai/api/v1/public/projects/kj4ug9nh9e/badge.svg)](https://ask.thili.ai/b/kj4ug9nh9e)
 
-**For educational use only. LexForge does not provide legal advice.** A model’s confidence measures its preference among its supported categories. It does not measure legal correctness, enforceability, or drafting quality.
+This project creates a command-line interface game designed for law students to practice drafting legal sentences. Players will complete partial legal sentences using n-gram prediction, receiving instant feedback on the generated clause types from a fine-tuned GPT-2 model. It's a fun way to hone legal drafting skills and understand common clause structures.
 
-## Run the lab
+## What you are building
 
-From the extracted project directory, create and activate a Python 3.11 environment. See the [installation guide](docs/install.md) for Ubuntu and Windows PowerShell.
+**Goal.** Develop a CLI game where players complete legal sentences using n-gram predictions, and then have their completed sentences classified by a fine-tuned GPT-2 model.
 
-```text
-python -m pip install ".[ml,test]"
-python scripts/fetch_base.py
-lexforge --player Ada
-python -m pytest -q
+**Done when.** You will have built a command-line interface game where players complete legal sentences using your n-gram model's predictions. The game will then classify the player's completed sentences using a fine-tuned GPT-2 model and provide instant feedback on the generated clause types.
+
+## Milestones
+
+Tick these off as you go, and commit after each one.
+
+- [ ] **1. Prepare a legal text corpus for n-gram model training.**  
+      Hint: Use text processing techniques to prepare your legal text corpus for n-gram training.
+- [ ] **2. Implement the n-gram next-word predictor.**  
+      Hint: Implement the core logic for predicting the next word based on the n-gram model you built.
+- [ ] **3. Load the fine-tuned GPT-2 model for legal clause classification.**  
+      Hint: Load the pre-trained and fine-tuned GPT-2 model for legal clause classification, as shown in the drill.
+- [ ] **4. Create a CLI game interface presenting partial legal sentences for completion.**  
+      Hint: Design a simple command-line interface to present partial sentences and capture user input.
+- [ ] **5. After user completion, classify the full sentence and provide feedback.**  
+      Hint: Integrate the GPT-2 model to classify the user's completed sentence and display the predicted clause type as feedback.
+
+## Run it
+
+You need Python 3.12 and git.
+
+```bash
+python3.12 -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+cp .env.example .env        # then choose a model; see the comments inside
+python -m app.cli hello
+pytest
 ```
 
-The distribution includes a CUAD-trained bigram/trigram model and compact, fine-tuned GPT-2 weights. The fetch step caches the pinned pretrained GPT-2 base, about 525 MiB. Later sessions use the cache offline. For a lightweight install, run `python -m pip install .` and `lexforge`. Drafting then awards the writing points it can assess and leaves the GPT-2 check ungraded.
+Your work goes in `app/core.py` (one stub per milestone) and `tests/test_core.py`. The first tests pass already; they
+check the plumbing.
 
-## Assignment milestones
+## Settings and secrets
 
-| Milestone | Implementation and evidence |
-| --- | --- |
-| 1 · Prepare the legal corpus | `scripts/prepare_data.py` fetches pinned CUAD contracts and LexGLUE LEDGAR provisions. It cleans and segments text, writes split JSONL with SHA-256 fingerprints, and removes duplicate or conflicting examples. N-gram vocabulary is fit on training sentences only. [Dataset guide](docs/datasets.md) |
-| 2 · Predict the next word | `NGram` implements word bigrams and trigrams, add-one unigram probabilities, recursive smoothing, OOV handling, and exact top-k word ranking. The trained model and held-out perplexity are in `src/lexforge/assets/`. The same model serves the predictor and drafting modes. [Evaluation](docs/evaluation.md) |
-| 3 · Fine-tune GPT-2 | `scripts/train_gpt2.py` fine-tunes the final transformer block, final normalization, and sequence classification head on five real legal labels. The checkpoint records validation accuracy, macro F1, precision, recall, and the confusion matrix. `scripts/evaluate_gpt2.py` reloads saved weights for independent evaluation. [Training and Colab](docs/training.md) |
-| 4 · Play in the terminal | `lexforge` opens the Rich and Typer menu. Draft freely at beginner, intermediate, and advanced levels. Replay sets, analyze a complete sentence, guess categories, revise examples, and browse saved progress. [User guide](docs/user-guide.md) |
-| 5 · Classify and score drafts | The game sends the combined prompt and continuation to GPT-2, displays the predicted category and softmax confidence, compares it with the target, and itemizes the writing and category points. SQLite saves attempts and XP. [User guide](docs/user-guide.md) |
+Model settings live in `.env`, which is ignored by git. **Never commit `.env` or paste a key into code.** If a key ever
+reaches GitHub, treat it as leaked and make a new one.
 
-The lab has 15 drafting challenges, five guessing examples, five revision exercises, a free-drafting analyzer, a model insights view, per-profile settings, six achievements, and a local leaderboard.
+## Stretch ideas
 
-## Rebuild or evaluate the models
-
-```text
-python -m pip install -e ".[train,test]"
-python scripts/prepare_data.py
-python scripts/train_ngram.py --tune
-python scripts/train_gpt2.py
-python scripts/evaluate_gpt2.py --output models/gpt2/test-metrics.json
-lexforge --ngram models/ngram.json.gz --gpt-checkpoint models/gpt2
-python -m pytest -q
-```
-
-The full-data GPT-2 command is intended for a GPU. The training guide also documents the smaller delivered run, Colab instructions, and checkpoint transfer. Recorded metrics and dataset manifests are shipped with the models.
-
-- [Installation](docs/install.md)
-- [Dataset preparation](docs/datasets.md)
-- [Model training and checkpoint import](docs/training.md)
-- [Evaluation methodology](docs/evaluation.md)
-- [User guide](docs/user-guide.md)
-- [Architecture and future full-stack roadmap](docs/architecture.md)
-- [Viva preparation](docs/viva.md)
+- Implement a scoring system based on how closely the player's completed sentence matches the expected clause type or a 'correct' completion.
+- Allow players to input their own full legal sentences for classification by the GPT-2 model, outside of the completion game.
+- Add more game modes, such as identifying the clause type of a given sentence or correcting errors in a provided legal sentence.
